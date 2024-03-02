@@ -10,15 +10,15 @@ export const NavLinks = () => {
   const location = useLocation();
 
   const getLinks = () => {
-    if (location.pathname === ROUTES.BASE) {
+    if (location.pathname === `/${ROUTES.BASE}`) {
       return (
-        <Link to={ROUTES.THREE_PAGE}>
+        <Link to={ROUTES.CUBE}>
           <Button variant="light" className={styles.btn}>
             Куб
           </Button>
         </Link>
       );
-    } else if (location.pathname === ROUTES.THREE_PAGE) {
+    } else if (location.pathname === `/${ROUTES.CUBE}`) {
       return (
         <Link to={ROUTES.BASE}>
           <Button variant="light" className={styles.btn}>

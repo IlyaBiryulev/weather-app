@@ -8,7 +8,6 @@ import { ROUTES } from './routes';
 type Route = {
   url: string;
   page: JSX.Element;
-  children?: Route[];
 };
 
 const PAGES: Route[] = [
@@ -17,18 +16,14 @@ const PAGES: Route[] = [
     page: <MainPage />,
   },
   {
-    url: ROUTES.THREE_PAGE,
+    url: ROUTES.CUBE,
     page: <CubePage />,
   },
 ];
 
 export const AppRouter = () => {
   const getRoutes = (routes: Route[]) => {
-    return routes.map(({ url, page, children }) => (
-      <Route key={url} path={url} element={page}>
-        {children && getRoutes(children)}
-      </Route>
-    ));
+    return routes.map(({ url, page }) => <Route key={url} path={url} element={page} />);
   };
 
   return <Routes>{getRoutes(PAGES)}</Routes>;

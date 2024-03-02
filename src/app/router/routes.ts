@@ -1,4 +1,4 @@
 export const ROUTES = {
-  BASE: '/',
-  THREE_PAGE: '/three',
+  BASE: 'weather-app/',
+  CUBE: 'weather-app/cube',
 };
