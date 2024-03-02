@@ -1,10 +1,12 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
+import { Weather } from '../model/types';
+
 import { getCurrentWeather } from '.';
 
 class weatherStore {
-  weather = [];
-  isLoding = false;
+  weather: Weather | undefined = undefined;
+  isLoding: boolean = false;
 
   constructor() {
     makeAutoObservable(this);

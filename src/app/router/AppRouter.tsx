@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
+import CubePage from '@/pages/CubePage/CubePage';
 import MainPage from '@/pages/MainPage/MainPage';
 
 import { ROUTES } from './routes';
@@ -14,6 +15,10 @@ const PAGES: Route[] = [
   {
     url: ROUTES.BASE,
     page: <MainPage />,
+  },
+  {
+    url: ROUTES.THREE_PAGE,
+    page: <CubePage />,
   },
 ];
 

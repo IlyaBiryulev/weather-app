@@ -17,8 +17,10 @@ export const WeatherList = observer(() => {
 
   return (
     <Stack className={styles.container}>
-      {weather && <CurrentWeatherCard data={weather} />}
-      <Flex gap={10}>{weather.daily?.data.map((day) => <DailyWeatherCard data={day} />)}</Flex>
+      {weather && <CurrentWeatherCard weatherData={weather.current} />}
+      <Flex gap={10}>
+        {weather?.daily.data.map((day) => <DailyWeatherCard dailyData={day} key={day.day} />)}
+      </Flex>
     </Stack>
   );
 });
